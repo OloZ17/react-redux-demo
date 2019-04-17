@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { object } from "prop-types";
+import { array } from "prop-types";
 import { connect } from "react-redux";
 
 class UserList extends Component {
@@ -21,7 +21,7 @@ class UserList extends Component {
 }
 
 UserList.propTypes = {
-  myUsers: object
+  myUsers: array
 };
 
 var mapStateToProps = state => {
