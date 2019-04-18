@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import UserList from "../containers/user_list";
 import UserDetail from "../containers/user_detail";
 import "../assets/style.css";
+import { fetchUsers } from "../services";
 
 export default class App extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class App extends Component {
     //return <div>toto</div>;
     return (
       <Fragment>
-        <UserList />
+        <UserList myUsers={fetchUsers()} />
         <UserDetail />
       </Fragment>
     );

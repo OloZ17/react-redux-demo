@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import { array, func } from "prop-types";
 import { connect } from "react-redux";
-import { selectUser } from "../actions/index";
-import { bindActionCreators } from "redux";
+import { selectUser } from "../redux/user";
 
 class UserList extends Component {
   render() {
     return (
       <div>
         <ul className="col-md-4">
-          {this.props.myUsers.map(user => {
-            return (
-              <li className="list-group-item" key={user.id} onClick={() => this.props.selectUser(user)}>
-                {user.name}
-              </li>
-            );
-          })}
+          {this.props.myUsers.map(user => (
+            <li className="list-group-item" key={user.id} onClick={() => this.props.selectAnUser(user)}>
+              {user.name}
+            </li>
+          ))}
         </ul>
       </div>
     );
@@ -24,18 +21,12 @@ class UserList extends Component {
 
 UserList.propTypes = {
   myUsers: array,
-  selectUser: func
+  selectAnUser: func
 };
 
-var mapStateToProps = state => {
-  return {
-    myUsers: state.users
-  };
-};
-
-var mapDispatchToProps = dispatch => {
-  return bindActionCreators({ selectUser: selectUser }, dispatch);
-};
+const mapDispatchToProps = dispatch => ({
+  selectAnUser: user => dispatch(selectUser(user))
+});
 
 // function mapStateToProps(state) {
 //   return {
@@ -44,6 +35,6 @@ var mapDispatchToProps = dispatch => {
 // }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(UserList);

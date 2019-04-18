@@ -1,0 +1,1 @@
+export const SELECT_USER = "USER/SELECT_USER";
