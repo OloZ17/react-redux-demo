@@ -1,12 +1,12 @@
 import React from "react";
 import { array, func } from "prop-types";
 
-const UserList = ({ users, selectUser }) => {
+const UserList = ({ users, selectedUser }) => {
   return (
     <div>
       <ul className="col-md-4">
         {users.map(user => (
-          <li className="list-group-item" key={user.id} onClick={() => selectUser(user)}>
+          <li className="list-group-item" key={user.id} onClick={() => selectedUser(user)}>
             {user.name}
           </li>
         ))}
@@ -17,7 +17,7 @@ const UserList = ({ users, selectUser }) => {
 
 UserList.propTypes = {
   users: array,
-  selectUser: func
+  selectedUser: func
 };
 
 export default UserList;

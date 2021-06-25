@@ -1,3 +1,3 @@
-import UserDetailContainer from "./UserDetailContainer";
+import UserDetailContainer from './UserDetailContainer';
 
 export default UserDetailContainer;

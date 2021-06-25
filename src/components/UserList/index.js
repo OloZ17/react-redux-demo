@@ -1,3 +1,3 @@
-import UserListContainer from "./UserListContainer";
+import UserListContainer from './UserListContainer';
 
 export default UserListContainer;
