@@ -1,21 +1,27 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import { user } from "./user";
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import { user } from './user';
 
-const reducers = combineReducers({
-  activeUser: user
+const rootReducer = combineReducers({
+  activeUser: user,
 });
 
 // Bonus
-const lastState = sessionStorage.getItem("redux-store") ? JSON.parse(sessionStorage.getItem("redux-store")) : {};
+const lastState = sessionStorage.getItem('redux-store')
+  ? JSON.parse(sessionStorage.getItem('redux-store'))
+  : {};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducers, lastState, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(
+  rootReducer,
+  lastState,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 // Bonus
 store.subscribe(() => {
-  sessionStorage.setItem("redux-store", JSON.stringify(store.getState()));
+  sessionStorage.setItem('redux-store', JSON.stringify(store.getState()));
 });
 
 export default store;

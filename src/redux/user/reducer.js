@@ -1,8 +1,8 @@
-import { SELECT_USER } from "./constants";
+import { SELECT_USER } from './constants';
 
 const initialState = {
   id: 0,
-  name: ""
+  name: '',
 };
 
 export const user = (state = initialState, action) => {
