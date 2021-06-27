@@ -17,12 +17,14 @@ const renderWithRedux = (
 
 afterEach(cleanup);
 
-it('should take a snapshot', () => {
-  const { asFragment } = renderWithRedux(<App />, {
-    initialState: {
-      activeUser: { id: 0, name: '' },
-    },
-  });
+describe('Testing App() Component', () => {
+  it('should take a snapshot', () => {
+    const { asFragment } = renderWithRedux(<App />, {
+      initialState: {
+        activeUser: { id: 0, name: '' },
+      },
+    });
 
-  expect(asFragment(<App />)).toMatchSnapshot();
+    expect(asFragment(<App />)).toMatchSnapshot();
+  });
 });
