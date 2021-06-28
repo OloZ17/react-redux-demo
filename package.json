@@ -18,10 +18,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test setupFile ./src/setupTests.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "eslint-plugin-testing-library": "^4.6.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/index.js",
+      "!src/setupTest.js",
+      "!src/redux/store.js"
+    ]
   }
 }

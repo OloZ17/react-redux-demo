@@ -1,15 +1,7 @@
 import React from 'react';
-import {
-  render,
-  screen,
-  cleanup,
-  within,
-  fireEvent,
-} from '@testing-library/react';
+import { render, screen, within, fireEvent } from '@testing-library/react';
 
 import UserList from '../UserList';
-
-afterEach(cleanup);
 
 describe('Testing UserList() Component', () => {
   const users = [
