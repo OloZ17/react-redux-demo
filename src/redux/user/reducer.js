@@ -5,11 +5,12 @@ const initialState = {
   name: '',
 };
 
-export const user = (state = initialState, action) => {
-  // console.log(state);
-  switch (action.type) {
+export const user = (state = initialState, action = {}) => {
+  const { type, payload } = action;
+
+  switch (type) {
     case SELECT_USER:
-      return action.payload;
+      return payload;
     case RESET_USER:
       return initialState;
     default:

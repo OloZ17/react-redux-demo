@@ -1,12 +1,10 @@
-import { SELECT_USER } from "./constants";
+import { SELECT_USER, RESET_USER } from './constants';
 
-export const selectUser = user => {
-  console.log("---------------------");
-  console.log("selected : ", user);
-  console.log("---------------------");
+export const selectUser = (payload) => ({
+  type: SELECT_USER,
+  payload,
+});
 
-  return {
-    type: SELECT_USER,
-    payload: user
-  };
-};
+export const resetUser = () => ({
+  type: RESET_USER,
+});
