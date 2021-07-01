@@ -1,4 +1,4 @@
-import { SELECT_USER } from './constants';
+import { SELECT_USER, RESET_USER } from './constants';
 
 const initialState = {
   id: 0,
@@ -10,6 +10,8 @@ export const user = (state = initialState, action) => {
   switch (action.type) {
     case SELECT_USER:
       return action.payload;
+    case RESET_USER:
+      return initialState;
     default:
       return state;
   }
