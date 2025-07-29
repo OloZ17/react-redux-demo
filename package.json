@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "eslint-plugin-testing-library": "6.5.0",
-    "@testing-library/dom": "10.4.0"
+    "@testing-library/dom": "10.4.1"
   },
   "jest": {
     "collectCoverageFrom": [
